@@ -2,6 +2,7 @@
   "name": "toggl-menubar-app",
   "version": "1.0.0",
   "devDependencies": {
+    "electron-builder": "^19.37.2",
     "electron-packager": "^8.0.0",
     "electron-prebuilt": "^1.4.1"
   },
@@ -9,5 +10,12 @@
   "main": "main.js",
   "scripts": {
     "start": "electron ."
+  },
+  "build": {
+    "appId": "haringsbe.togglmenubar",
+    "mac": {
+      "category": "public.app-category.productivity"
+    },
+    "files": ["**/*", "assets/togglicon.*"]
   }
 }

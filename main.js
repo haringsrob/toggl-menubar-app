@@ -1,13 +1,12 @@
 const { app, BrowserWindow, ipcMain, Tray, nativeImage } = require("electron");
 const path = require("path");
 
-const assetsDir = path.join(__dirname, "assets");
-
 let tray = undefined;
 let window = undefined;
 
 app.on("ready", () => {
-  tray = new Tray("Toggl-logo-16.png");
+  let iconpath = path.join(__dirname, "assets", "togglicon.png");
+  tray = new Tray(iconpath);
 
   tray.on("click", function(event) {
     toggleWindow();
